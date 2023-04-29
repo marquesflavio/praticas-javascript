@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    position: relative;
+    padding: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.galeria-wrapper{
+    overflow-x: auto;
+}
+.galeria{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.robo{
+    width: 550px;
+    flex-shrink: 0;
+    opacity: 0.4;
+    transition: all 600ms ease-in-out;
+}
+.robo-atual{
+    opacity: 1;
+}
+.seta-direita, 
+.seta-esquerda{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    font-size: 20px;
+    line-height: 250px;
+    width: 40px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.5) 200%);
+    opacity: 0.5;
+    transition: all 600ms ease-in-out;
+
+}
+.seta-direita{
+    left: auto;
+    right: 0;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 200%);
+
+}
+.seta-esquerda:hover,
+.seta-direita:hover{
+    opacity: 1;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.galeria-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+.galeria-wrapper {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
