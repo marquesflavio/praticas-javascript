@@ -25,7 +25,7 @@
 .robo-atual{
     opacity: 1;
 }
-.seta-direita, 
+.seta-direita,
 .seta-esquerda{
     position: absolute;
     top: 0;
