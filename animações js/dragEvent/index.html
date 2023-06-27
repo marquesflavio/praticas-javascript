@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragEvent</title>
+</head>
+<style>
+    body{
+        background-color: lightslategray;
+    }
+    .wrapper .tabs-box{
+        list-style: none;
+        margin: auto;
+        background-color: #FFF;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        align-items: center;
+        
+    }
+    .tabs-box {
+        height: 50px;
+        border-radius: 10px;
+
+    }
+    .tab{
+        background-color: lightblue;
+        padding: 10px;
+        border-radius: 30px;
+        height: 20px;
+    }
+</style>
+<body>
+    <h1>Evento de drag do mouse</h1>
+
+    <p>Clique e arraste!</p>
+
+    <div class="wrapper">
+        <ul class="tabs-box">
+            <li class="tab">Elementos</li>
+            <li class="tab">Elementos</li>
+            <li class="tab">Elementos</li>
+            <li class="tab">Elementos</li>
+            <li class="tab">Elementos</li>
+            <li class="tab">Elementos</li>
+            <li class="tab">Elementos</li>
+            <li class="tab">Elementos</li>
+            <li class="tab">Elementos</li>
+            <li class="tab">Elementos</li>
+        </ul>
+    </div>
+
+   <script>
+        const tabsBox = document.querySelector('.tabs-box')
+
+        let isDraggin = false;
+
+        const dragging = (e) => {
+            if (!isDraggin) return;
+            tabsBox.scrollLeft -= e.movementX;
+        }
+
+        const dragStop = () => {
+            isDraggin = false;
+        }
+
+        tabsBox.addEventListener('mousemove', dragging)
+        tabsBox.addEventListener('mousedown', () => isDraggin = true);
+        document.addEventListener('mouseup', dragStop);
+
+
+
+   </script>
+</body>
+</html>

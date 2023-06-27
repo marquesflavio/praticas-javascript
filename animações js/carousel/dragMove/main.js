@@ -12,10 +12,9 @@ let currentIndex = 0;
 images.addEventListener('mousedown', dragStart);
 images.addEventListener('touchstart', dragStart);
 images.addEventListener('mouseup', dragEnd);
-images.addEventListener('touchend', dragEnd);
 images.addEventListener('mouseleave', dragEnd);
 images.addEventListener('mousemove', drag);
-images.addEventListener('touchmove', drag);
+
 
 // Impedir seleção durante o arrasto
 images.addEventListener('dragstart', (e) => e.preventDefault());
